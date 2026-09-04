@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A cinematic Krishna Janmashtami interactive experience." />
+  <title>Krishna | The Divine Arrival</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="cursor-glow"></div>
+
+  <header class="nav">
+    <a class="brand" href="#home">🦚 <span>KRISHNA</span></a>
+    <nav>
+      <a href="#story">Story</a>
+      <a href="#symbols">Symbols</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+    <button id="soundBtn" class="icon-btn" aria-label="Toggle ambient sound">🔇</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="moon"></div>
+      <div class="feather feather-a">🪶</div>
+      <div class="feather feather-b">🪶</div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">A NIGHT OF DIVINE ARRIVAL</p>
+        <h1>Jai Shri<br><span>Krishna</span></h1>
+        <p class="hero-text">
+          Let devotion glow like a diya, let wisdom flow like a river,
+          and let every heart celebrate the divine.
+        </p>
+
+        <div class="countdown" aria-label="Janmashtami countdown">
+          <div><strong id="days">00</strong><small>Days</small></div>
+          <div><strong id="hours">00</strong><small>Hours</small></div>
+          <div><strong id="minutes">00</strong><small>Minutes</small></div>
+          <div><strong id="seconds">00</strong><small>Seconds</small></div>
+        </div>
+
+        <a class="cta" href="#quiz">ENTER THE DIVINE NIGHT <span>↓</span></a>
+      </div>
+
+      <div class="diyas">
+        <div class="diya" data-diya><i></i><span></span></div>
+        <div class="diya" data-diya><i></i><span></span></div>
+        <div class="diya" data-diya><i></i><span></span></div>
+      </div>
+    </section>
+
+    <section id="story" class="section story">
+      <div class="section-heading reveal">
+        <p class="eyebrow">THE FESTIVAL</p>
+        <h2>When the world welcomed <em>Krishna</em></h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-card reveal">
+          <span class="number">01</span>
+          <h3>Midnight</h3>
+          <p>Janmashtami celebrates the birth of Lord Krishna, traditionally observed at midnight, the sacred moment of his arrival.</p>
+        </div>
+        <div class="story-card reveal">
+          <span class="number">02</span>
+          <h3>Devotion</h3>
+          <p>Temples glow with lamps, prayers, bhajans and celebrations as devotees remember Krishna's teachings and playful spirit.</p>
+        </div>
+        <div class="story-card reveal">
+          <span class="number">03</span>
+          <h3>Joy</h3>
+          <p>From decorated matkis to Krishna's flute, the festival turns remembrance into a joyful celebration of love and dharma.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="symbols" class="section symbols">
+      <div class="section-heading reveal">
+        <p class="eyebrow">DIVINE SYMBOLS</p>
+        <h2>Little things, <em>deep meanings</em></h2>
+      </div>
+      <div class="symbol-grid">
+        <article class="symbol reveal" data-symbol="feather">
+          <div class="symbol-art">🦚</div>
+          <h3>Peacock Feather</h3>
+          <p>Often associated with Krishna, symbolizing beauty, grace and the playful divine.</p>
+        </article>
+        <article class="symbol reveal" data-symbol="flute">
+          <div class="symbol-art">🪈</div>
+          <h3>The Flute</h3>
+          <p>Krishna's flute is a beloved symbol of simplicity, music and surrender.</p>
+        </article>
+        <article class="symbol reveal" data-symbol="matki">
+          <div class="symbol-art">🏺</div>
+          <h3>Makhan Matki</h3>
+          <p>It recalls the charming stories of Krishna's childhood and his love of butter.</p>
+        </article>
+        <article class="symbol reveal" data-symbol="diya">
+          <div class="symbol-art">🪔</div>
+          <h3>Diya</h3>
+          <p>A small flame representing light, hope and the victory of goodness over darkness.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="quiz" class="section quiz-section">
+      <div class="quiz-shell reveal">
+        <div class="quiz-intro">
+          <p class="eyebrow">A SIMPLE CHALLENGE</p>
+          <h2>How well do you know <em>Krishna?</em></h2>
+          <p>Answer these five questions and see your score.</p>
+        </div>
+
+        <div id="quizBox">
+          <div class="quiz-top">
+            <span id="questionNo">Question 1 / 5</span>
+            <span id="scoreLabel">Score: 0</span>
+          </div>
+          <div class="progress"><span id="progress"></span></div>
+          <h3 id="question">Loading...</h3>
+          <div id="answers" class="answers"></div>
+          <button id="nextBtn" class="next-btn" disabled>Next Question →</button>
+        </div>
+
+        <div id="resultBox" class="result hidden">
+          <div class="result-icon">🦚</div>
+          <p class="eyebrow">YOUR RESULT</p>
+          <h2 id="resultTitle">Well done!</h2>
+          <p id="resultText"></p>
+          <button id="restartBtn" class="cta">PLAY AGAIN ↻</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="quote reveal">
+        <span>“</span>
+        <p>Where there is Krishna, there is wisdom, victory, and the presence of divine purpose.</p>
+        <small>— A Janmashtami tribute</small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>🦚 <strong>Jai Shri Krishna</strong></div>
+    <p>Made with ❤️, code & devotion.</p>
+  </footer>
+
+  <div id="toast" class="toast">✨ Jai Shri Krishna!</div>
+  <script src="script.js"></script>
+</body>
+</html>
