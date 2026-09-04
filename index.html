@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="D.k Dovloper - Next-Gen Home Security Systems. Premium Protection for Modern Living.">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>D.k Dovloper | Premium Home Security</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="premium.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="shield-animation">
+                <svg class="shield-svg" viewBox="0 0 100 120" fill="none">
+                    <path class="shield-path" d="M50 5L10 25V55C10 85 30 105 50 115C70 105 90 85 90 55V25L50 5Z" stroke="url(#shieldGradient)" stroke-width="2" fill="none"/>
+                    <path class="shield-fill" d="M50 5L10 25V55C10 85 30 105 50 115C70 105 90 85 90 55V25L50 5Z" fill="url(#shieldGradient)" opacity="0"/>
+                    <path class="shield-check" d="M30 55L45 70L70 40" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60" stroke-dashoffset="60"/>
+                    <defs>
+                        <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#667eea"/>
+                            <stop offset="50%" stop-color="#764ba2"/>
+                            <stop offset="100%" stop-color="#f093fb"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="preloader-text">
+                <span class="brand-name">D.k Dovloper</span>
+                <span class="brand-tagline">Premium Security</span>
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" class="app">
+        <!-- Ambient Background -->
+        <div class="ambient-bg">
+            <div class="ambient-orb orb-1"></div>
+            <div class="ambient-orb orb-2"></div>
+            <div class="ambient-orb orb-3"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="header" id="header">
+            <div class="header-inner">
+                <div class="logo" onclick="navigateTo('home')">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 40 48" fill="none">
+                            <path d="M20 2L2 12V24C2 36 10 44 20 48C30 44 38 36 38 24V12L20 2Z" fill="url(#logoGrad)"/>
+                            <path d="M14 24L18 28L26 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="logoGrad" x1="2" y1="2" x2="38" y2="48">
+                                    <stop offset="0%" stop-color="#667eea"/>
+                                    <stop offset="100%" stop-color="#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-brand">D.k Dovloper</span>
+                        <span class="logo-sub">SECURITY</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <div class="nav-drawer" id="navDrawer">
+            <div class="nav-backdrop" id="navBackdrop"></div>
+            <div class="nav-panel">
+                <div class="nav-header">
+                    <div class="nav-brand">
+                        <svg viewBox="0 0 40 48" fill="none" width="40">
+                            <path d="M20 2L2 12V24C2 36 10 44 20 48C30 44 38 36 38 24V12L20 2Z" fill="url(#navLogoGrad)"/>
+                            <path d="M14 24L18 28L26 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="navLogoGrad" x1="2" y1="2" x2="38" y2="48">
+                                    <stop offset="0%" stop-color="#667eea"/>
+                                    <stop offset="100%" stop-color="#764ba2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div>
+                            <div class="nav-brand-name">D.k Dovloper</div>
+                            <div class="nav-brand-tagline">Premium Security</div>
+                        </div>
+                    </div>
+                    <button class="nav-close" id="navClose">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+                <nav class="nav-menu">
+                    <a class="nav-item active" data-page="home">
+                        <i class="fas fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                    <a class="nav-item" data-page="services">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>Services</span>
+                    </a>
+                    <a class="nav-item" data-page="products">
+                        <i class="fas fa-microchip"></i>
+                        <span>Products</span>
+                    </a>
+                    <a class="nav-item" data-page="packages">
+                        <i class="fas fa-box-open"></i>
+                        <span>Packages</span>
+                    </a>
+                    <a class="nav-item" data-page="portfolio">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                    <a class="nav-item" data-page="about">
+                        <i class="fas fa-building"></i>
+                        <span>About Us</span>
+                    </a>
+                    <a class="nav-item" data-page="testimonials">
+                        <i class="fas fa-star"></i>
+                        <span>Testimonials</span>
+                    </a>
+                    <a class="nav-item" data-page="contact">
+                        <i class="fas fa-headset"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+                <div class="nav-footer">
+                    <div class="nav-contact-card">
+                        <div class="nav-contact-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <div class="nav-contact-label">24/7 Emergency</div>
+                            <a href="tel:+1234567890" class="nav-contact-value">+1 (234) 567-890</a>
+                        </div>
+                    </div>
+                    <div class="nav-socials">
+                        <a href="#" class="nav-social"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="nav-social"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="nav-social"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="nav-social"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main" id="main">
+
+            <!-- ==================== HOME ==================== -->
+            <section class="page active" id="page-home">
+                <!-- Hero -->
+                <div class="hero">
+                    <div class="hero-particles" id="heroParticles"></div>
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span>Trusted by 500+ Homes</span>
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="title-line">Next-Gen</span>
+                            <span class="title-gradient">Home Security</span>
+                            <span class="title-line">Systems</span>
+                        </h1>
+                        <p class="hero-desc">Protecting what matters most with AI-powered surveillance, smart locks, and 24/7 monitoring. Your peace of mind, our priority.</p>
+                        <div class="hero-actions">
+                            <button class="btn-glow" onclick="navigateTo('quote')">
+                                <span>Get Free Quote</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <button class="btn-ghost" onclick="navigateTo('services')">
+                                <i class="fas fa-play"></i>
+                                <span>Our Services</span>
+                            </button>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="hero-stat-number" data-target="500">0</div>
+                                <div class="hero-stat-label">Projects Done</div>
+                            </div>
+                            <div class="hero-stat-divider"></div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-number" data-target="10">0</div>
+                                <div class="hero-stat-label">Years Exp.</div>
+                            </div>
+                            <div class="hero-stat-divider"></div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-number" data-target="99">0</div>
+                                <div class="hero-stat-label">% Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-3d-card">
+                            <div class="shield-3d">
+                                <div class="shield-glow"></div>
+                                <svg viewBox="0 0 200 240" fill="none" class="shield-main">
+                                    <path d="M100 10L10 50V110C10 170 60 210 100 230C140 210 190 170 190 110V50L100 10Z" fill="url(#heroShieldGrad)" opacity="0.15"/>
+                                    <path d="M100 10L10 50V110C10 170 60 210 100 230C140 210 190 170 190 110V50L100 10Z" stroke="url(#heroShieldGrad)" stroke-width="2"/>
+                                    <circle cx="100" cy="100" r="40" stroke="url(#heroShieldGrad)" stroke-width="1.5" opacity="0.5"/>
+                                    <circle cx="100" cy="100" r="25" stroke="url(#heroShieldGrad)" stroke-width="1" opacity="0.3"/>
+                                    <circle cx="100" cy="100" r="8" fill="url(#heroShieldGrad)"/>
+                                    <path d="M70 100L90 120L130 80" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="shield-check-hero"/>
+                                    <defs>
+                                        <linearGradient id="heroShieldGrad" x1="10" y1="10" x2="190" y2="230">
+                                            <stop offset="0%" stop-color="#667eea"/>
+                                            <stop offset="50%" stop-color="#764ba2"/>
+                                            <stop offset="100%" stop-color="#f093fb"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="orbit-ring ring-1"></div>
+                                <div class="orbit-ring ring-2"></div>
+                                <div class="orbit-dot dot-1"><i class="fas fa-video"></i></div>
+                                <div class="orbit-dot dot-2"><i class="fas fa-bell"></i></div>
+                                <div class="orbit-dot dot-3"><i class="fas fa-lock"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marquee -->
+                <div class="marquee-section">
+                    <div class="marquee-track">
+                        <div class="marquee-content">
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> CCTV Installation</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Smart Locks</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Alarm Systems</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Fire Detection</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Access Control</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> 24/7 Monitoring</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Smart Home</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Video Doorbell</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> CCTV Installation</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Smart Locks</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Alarm Systems</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Fire Detection</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Access Control</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> 24/7 Monitoring</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Smart Home</span>
+                            <span class="marquee-item"><i class="fas fa-check-circle"></i> Video Doorbell</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Preview -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-tag">What We Do</span>
+                        <h2 class="section-title">Our Premium <span class="gradient-text">Services</span></h2>
+                        <p class="section-desc">Comprehensive security solutions tailored for your home</p>
+                    </div>
+                    <div class="services-carousel" id="servicesCarousel">
+                        <div class="service-card glass-card" onclick="navigateTo('services')">
+                            <div class="service-card-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>CCTV Surveillance</h3>
+                            <p>4K cameras with AI motion detection and cloud storage</p>
+                            <div class="service-card-arrow">
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                        <div class="service-card glass-card" onclick="navigateTo('services')">
+                            <div class="service-card-icon icon-green">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h3>Smart Alarms</h3>
+                            <p>Instant alerts and siren systems with mobile control</p>
+                            <div class="service-card-arrow">
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                        <div class="service-card glass-card" onclick="navigateTo('services')">
+                            <div class="service-card-icon icon-purple">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h3>Smart Locks</h3>
+                            <p>Biometric & keyless entry with remote access</p>
+                            <div class="service-card-arrow">
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                        <div class="service-card glass-card" onclick="navigateTo('services')">
+                            <div class="service-card-icon icon-orange">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Fire Safety</h3>
+                            <p>Advanced smoke & CO detection with auto-alerts</p>
+                            <div class="service-card-arrow">
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                        <div class="service-card glass-card" onclick="navigateTo('services')">
+                            <div class="service-card-icon icon-cyan">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <h3>IoT Integration</h3>
+                            <p>Unified smart home control from one app</p>
+                            <div class="service-card-arrow">
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                        <div class="service-card glass-card" onclick="navigateTo('services')">
+                            <div class="service-card-icon icon-red">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h3>Vehicle Security</h3>
+                            <p>GPS tracking and dash cams for your vehicles</p>
+                            <div class="service-card-arrow">
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+
+                <!-- Why Us -->
+                <div class="section section-dark">
+                    <div class="section-header">
+                        <span class="section-tag">Why Choose Us</span>
+                        <h2 class="section-title">The <span class="gradient-text">D.k Difference</span></h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card glass-card-dark">
+                            <div class="feature-number">01</div>
+                            <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                            <h3>AI-Powered Tech</h3>
+                            <p>Latest artificial intelligence for smart threat detection</p>
+                        </div>
+                        <div class="feature-card glass-card-dark">
+                            <div class="feature-number">02</div>
+                            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                            <h3>24/7 Support</h3>
+                            <p>Round-the-clock emergency response team</p>
+                        </div>
+                        <div class="feature-card glass-card-dark">
+                            <div class="feature-number">03</div>
+                            <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                            <h3>Certified Experts</h3>
+                            <p>Licensed professionals with 10+ years experience</p>
+                        </div>
+                        <div class="feature-card glass-card-dark">
+                            <div class="feature-number">04</div>
+                            <div class="feature-icon"><i class="fas fa-award"></i></div>
+                            <h3>5-Year Warranty</h3>
+                            <p>Industry-leading warranty on all installations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Packages Preview -->
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-tag">Best Value</span>
+                        <h2 class="section-title">Security <span class="gradient-text">Packages</span></h2>
+                        <p class="section-desc">Choose the perfect plan for your home</p>
+                    </div>
+                    <div class="packages-preview">
+                        <div class="package-card glass-card">
+                            <div class="package-badge">Starter</div>
+                            <div class="package-price">
+                                <span class="price-currency">$</span>
+                                <span class="price-amount">499</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i>2 CCTV Cameras</li>
+                                <li><i class="fas fa-check"></i>1 Alarm System</li>
+                                <li><i class="fas fa-check"></i>Mobile App Access</li>
+                                <li><i class="fas fa-check"></i>1 Year Warranty</li>
+                            </ul>
+                            <button class="btn-outline-card" onclick="navigateTo('quote')">Get Started</button>
+                        </div>
+                        <div class="package-card package-featured glass-card">
+                            <div class="package-popular">Most Popular</div>
+                            <div class="package-badge badge-gradient">Pro</div>
+                            <div class="package-price">
+                                <span class="price-currency">Rs</span>
+                                <span class="price-amount">19000</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i>4 CCTV Cameras</li>
+                                <li><i class="fas fa-check"></i>Smart Lock</li>
+                                <li><i class="fas fa-check"></i>Alarm + Sensors</li>
+                                <li><i class="fas fa-check"></i>24/7 Monitoring</li>
+                                <li><i class="fas fa-check"></i>3 Year Warranty</li>
+                            </ul>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Get Started</button>
+                        </div>
+                        <div class="package-card glass-card">
+                            <div class="package-badge badge-gold">Elite</div>
+                            <div class="package-price">
+                                <span class="price-currency">Rs</span>
+                                <span class="price-amount">2499</span>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i>8+ CCTV Cameras</li>
+                                <li><i class="fas fa-check"></i>Full Smart Home</li>
+                                <li><i class="fas fa-check"></i>AI Monitoring</li>
+                                <li><i class="fas fa-check"></i>Priority Support</li>
+                                <li><i class="fas fa-check"></i>5 Year Warranty</li>
+                            </ul>
+                            <button class="btn-outline-card" onclick="navigateTo('quote')">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="section">
+                    <div class="cta-card">
+                        <div class="cta-bg-pattern"></div>
+                        <div class="cta-content">
+                            <h2>Ready to Secure Your Home?</h2>
+                            <p>Get a free consultation and custom security plan today. No obligations, just peace of mind.</p>
+                            <div class="cta-actions">
+                                <button class="btn-glow" onclick="navigateTo('quote')">
+                                    <span>Free Consultation</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                                <a href="tel:+1234567890" class="btn-outline-light">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Call Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== SERVICES ==================== -->
+            <section class="page" id="page-services">
+                <div class="page-hero">
+                    <h1>Our <span class="gradient-text">Services</span></h1>
+                    <p>End-to-end security solutions for complete peace of mind</p>
+                </div>
+                <div class="section">
+                    <div class="services-full">
+                        <div class="service-full-card glass-card">
+                            <div class="service-full-header">
+                                <div class="service-full-icon"><i class="fas fa-video"></i></div>
+                                <div>
+                                    <h3>CCTV Surveillance Systems</h3>
+                                    <span class="service-tag">Most Popular</span>
+                                </div>
+                            </div>
+                            <p>High-definition cameras powered by AI for real-time monitoring. Features include night vision, motion tracking, facial recognition, and cloud storage. View live feeds from anywhere via our mobile app.</p>
+                            <div class="service-specs">
+                                <div class="spec"><i class="fas fa-circle-check"></i>4K Ultra HD</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Night Vision</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>AI Motion</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Cloud Backup</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Remote View</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>2-Way Audio</div>
+                            </div>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Request Quote</button>
+                        </div>
+
+                        <div class="service-full-card glass-card">
+                            <div class="service-full-header">
+                                <div class="service-full-icon icon-green"><i class="fas fa-bell"></i></div>
+                                <div>
+                                    <h3>Smart Alarm Systems</h3>
+                                    <span class="service-tag tag-green">Advanced</span>
+                                </div>
+                            </div>
+                            <p>Multi-layered intrusion detection with instant mobile notifications. Includes door/window sensors, motion detectors, glass break sensors, and a powerful 110dB siren. Integrates with emergency services for immediate response.</p>
+                            <div class="service-specs">
+                                <div class="spec"><i class="fas fa-circle-check"></i>Motion Detection</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Door Sensors</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Glass Break</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>110dB Siren</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Mobile Alerts</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Auto Dialer</div>
+                            </div>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Request Quote</button>
+                        </div>
+
+                        <div class="service-full-card glass-card">
+                            <div class="service-full-header">
+                                <div class="service-full-icon icon-purple"><i class="fas fa-lock"></i></div>
+                                <div>
+                                    <h3>Smart Lock Systems</h3>
+                                    <span class="service-tag tag-purple">Premium</span>
+                                </div>
+                            </div>
+                            <p>Keyless entry with biometric fingerprint, PIN code, and RFID card access. Grant temporary access to guests, monitor entry logs, and lock/unlock remotely from your smartphone. Military-grade encryption for maximum security.</p>
+                            <div class="service-specs">
+                                <div class="spec"><i class="fas fa-circle-check"></i>Fingerprint</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>PIN Code</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>RFID Card</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Remote Lock</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Entry Logs</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Auto-Lock</div>
+                            </div>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Request Quote</button>
+                        </div>
+
+                        <div class="service-full-card glass-card">
+                            <div class="service-full-header">
+                                <div class="service-full-icon icon-orange"><i class="fas fa-fire"></i></div>
+                                <div>
+                                    <h3>Fire & Gas Detection</h3>
+                                    <span class="service-tag tag-orange">Essential</span>
+                                </div>
+                            </div>
+                            <p>Early warning systems for fire, smoke, and gas leaks. Connected to your smart home hub with instant notifications and automatic emergency service alerts. Protects your family from invisible threats.</p>
+                            <div class="service-specs">
+                                <div class="spec"><i class="fas fa-circle-check"></i>Smoke Detector</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Heat Sensor</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>CO Detection</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Gas Leak</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Auto Alert</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Backup Power</div>
+                            </div>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Request Quote</button>
+                        </div>
+
+                        <div class="service-full-card glass-card">
+                            <div class="service-full-header">
+                                <div class="service-full-icon icon-cyan"><i class="fas fa-network-wired"></i></div>
+                                <div>
+                                    <h3>Access Control Systems</h3>
+                                    <span class="service-tag tag-cyan">Enterprise</span>
+                                </div>
+                            </div>
+                            <p>Complete access management for gated communities, villas, and commercial properties. Includes turnstiles, boom barriers, intercom systems, and visitor management with video verification.</p>
+                            <div class="service-specs">
+                                <div class="spec"><i class="fas fa-circle-check"></i>Turnstiles</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Boom Barriers</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Video Intercom</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Visitor Mgmt</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>QR Access</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Tenant Mgmt</div>
+                            </div>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Request Quote</button>
+                        </div>
+
+                        <div class="service-full-card glass-card">
+                            <div class="service-full-header">
+                                <div class="service-full-icon icon-red"><i class="fas fa-house-signal"></i></div>
+                                <div>
+                                    <h3>Smart Home Automation</h3>
+                                    <span class="service-tag tag-red">Smart</span>
+                                </div>
+                            </div>
+                            <p>Transform your home into an intelligent ecosystem. Control lighting, AC, curtains, and security from a single app. Works with Alexa, Google Home, and Apple HomeKit for voice control.</p>
+                            <div class="service-specs">
+                                <div class="spec"><i class="fas fa-circle-check"></i>Voice Control</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Scheduling</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Energy Saving</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Scene Control</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Geofencing</div>
+                                <div class="spec"><i class="fas fa-circle-check"></i>Multi-Room</div>
+                            </div>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== PRODUCTS ==================== -->
+            <section class="page" id="page-products">
+                <div class="page-hero">
+                    <h1>Premium <span class="gradient-text">Products</span></h1>
+                    <p>Curated selection of top-tier security hardware</p>
+                </div>
+                <div class="section">
+                    <div class="filter-bar">
+                        <button class="filter-chip active" data-filter="all">All</button>
+                        <button class="filter-chip" data-filter="camera">Cameras</button>
+                        <button class="filter-chip" data-filter="alarm">Alarms</button>
+                        <button class="filter-chip" data-filter="lock">Locks</button>
+                        <button class="filter-chip" data-filter="sensor">Sensors</button>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card glass-card" data-category="camera">
+                            <div class="product-badge">New</div>
+                            <div class="product-visual camera-gradient">
+                                <i class="fas fa-video"></i>
+                                <div class="product-ring"></div>
+                            </div>
+                            <div class="product-body">
+                                <h3>4K AI Dome Camera</h3>
+                                <p>Indoor/Outdoor, Night Vision, AI Detection</p>
+                                <div class="product-footer">
+                                    <div class="product-price">$149</div>
+                                    <button class="btn-add" onclick="navigateTo('quote')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card glass-card" data-category="camera">
+                            <div class="product-visual camera-gradient-2">
+                                <i class="fas fa-camera"></i>
+                                <div class="product-ring"></div>
+                            </div>
+                            <div class="product-body">
+                                <h3>Video Doorbell Pro</h3>
+                                <p>2K HD, Two-Way Audio, Motion Zone</p>
+                                <div class="product-footer">
+                                    <div class="product-price">$199</div>
+                                    <button class="btn-add" onclick="navigateTo('quote')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card glass-card" data-category="camera">
+                            <div class="product-visual camera-gradient-3">
+                                <i class="fas fa-satellite-dish"></i>
+                                <div class="product-ring"></div>
+                            </div>
+                            <div class="product-body">
+                                <h3>PTZ Outdoor Camera</h3>
+                                <p>360 Pan, 50m Range, Weatherproof</p>
+                                <div class="product-footer">
+                                    <div class="product-price">$349</div>
+                                    <button class="btn-add" onclick="navigateTo('quote')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card glass-card" data-category="alarm">
+                            <div class="product-visual alarm-gradient">
+                                <i class="fas fa-bell"></i>
+                                <div class="product-ring"></div>
+                            </div>
+                            <div class="product-body">
+                                <h3>Smart Alarm Hub</h3>
+                                <p>WiFi + 4G, 200m Range, Backup Battery</p>
+                                <div class="product-footer">
+                                    <div class="product-price">$299</div>
+                                    <button class="btn-add" onclick="navigateTo('quote')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card glass-card" data-category="lock">
+                            <div class="product-visual lock-gradient">
+                                <i class="fas fa-fingerprint"></i>
+                                <div class="product-ring"></div>
+                            </div>
+                            <div class="product-body">
+                                <h3>Biometric Smart Lock</h3>
+                                <p>Fingerprint, PIN, RFID, App Control</p>
+                                <div class="product-footer">
+                                    <div class="product-price">$449</div>
+                                    <button class="btn-add" onclick="navigateTo('quote')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card glass-card" data-category="sensor">
+                            <div class="product-visual sensor-gradient">
+                                <i class="fas fa-sensor"></i>
+                                <div class="product-ring"></div>
+                            </div>
+                            <div class="product-body">
+                                <h3>Motion + Door Sensor Kit</h3>
+                                <p>PIR + Magnetic, 5yr Battery, Zigbee</p>
+                                <div class="product-footer">
+                                    <div class="product-price">$79</div>
+                                    <button class="btn-add" onclick="navigateTo('quote')"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== PACKAGES ==================== -->
+            <section class="page" id="page-packages">
+                <div class="page-hero">
+                    <h1>Security <span class="gradient-text">Packages</span></h1>
+                    <p>All-in-one solutions at unbeatable prices</p>
+                </div>
+                <div class="section">
+                    <div class="packages-full">
+                        <div class="package-full-card glass-card">
+                            <div class="pf-header">
+                                <div class="pf-icon"><i class="fas fa-shield"></i></div>
+                                <div>
+                                    <h3>Starter Shield</h3>
+                                    <p>Perfect for small homes & apartments</p>
+                                </div>
+                            </div>
+                            <div class="pf-price">
+                                <span class="pf-currency">$</span>
+                                <span class="pf-amount">499</span>
+                                <span class="pf-period">one-time</span>
+                            </div>
+                            <ul class="pf-features">
+                                <li><i class="fas fa-check"></i>2x HD CCTV Cameras</li>
+                                <li><i class="fas fa-check"></i>1x Smart Alarm System</li>
+                                <li><i class="fas fa-check"></i>2x Door/Window Sensors</li>
+                                <li><i class="fas fa-check"></i>Mobile App Access</li>
+                                <li><i class="fas fa-check"></i>Professional Installation</li>
+                                <li><i class="fas fa-check"></i>1 Year Warranty</li>
+                                <li><i class="fas fa-check"></i>Free Setup & Training</li>
+                            </ul>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Choose Starter</button>
+                        </div>
+
+                        <div class="package-full-card package-featured-full glass-card">
+                            <div class="pf-popular">Recommended</div>
+                            <div class="pf-header">
+                                <div class="pf-icon pf-icon-gradient"><i class="fas fa-shield-halved"></i></div>
+                                <div>
+                                    <h3>Pro Shield</h3>
+                                    <p>Ideal for houses & villas</p>
+                                </div>
+                            </div>
+                            <div class="pf-price">
+                                <span class="pf-currency">$</span>
+                                <span class="pf-amount">999</span>
+                                <span class="pf-period">one-time</span>
+                            </div>
+                            <ul class="pf-features">
+                                <li><i class="fas fa-check"></i>4x 4K CCTV Cameras</li>
+                                <li><i class="fas fa-check"></i>1x Smart Lock (Front Door)</li>
+                                <li><i class="fas fa-check"></i>1x Smart Alarm Hub</li>
+                                <li><i class="fas fa-check"></i>4x Motion Sensors</li>
+                                <li><i class="fas fa-check"></i>24/7 Monitoring Service</li>
+                                <li><i class="fas fa-check"></i>Professional Installation</li>
+                                <li><i class="fas fa-check"></i>3 Year Warranty</li>
+                                <li><i class="fas fa-check"></i>Priority Support</li>
+                            </ul>
+                            <button class="btn-glow" onclick="navigateTo('quote')">
+                                <span>Choose Pro</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="package-full-card glass-card">
+                            <div class="pf-header">
+                                <div class="pf-icon pf-icon-gold"><i class="fas fa-crown"></i></div>
+                                <div>
+                                    <h3>Elite Shield</h3>
+                                    <p>Complete luxury home protection</p>
+                                </div>
+                            </div>
+                            <div class="pf-price">
+                                <span class="pf-currency">$</span>
+                                <span class="pf-amount">2499</span>
+                                <span class="pf-period">one-time</span>
+                            </div>
+                            <ul class="pf-features">
+                                <li><i class="fas fa-check"></i>8x 4K AI Cameras</li>
+                                <li><i class="fas fa-check"></i>3x Smart Locks</li>
+                                <li><i class="fas fa-check"></i>Full Alarm System</li>
+                                <li><i class="fas fa-check"></i>Fire & CO Detection</li>
+                                <li><i class="fas fa-check"></i>Smart Home Integration</li>
+                                <li><i class="fas fa-check"></i>AI-Powered Monitoring</li>
+                                <li><i class="fas fa-check"></i>5 Year Warranty</li>
+                                <li><i class="fas fa-check"></i>VIP 24/7 Support</li>
+                                <li><i class="fas fa-check"></i>Annual Maintenance</li>
+                            </ul>
+                            <button class="btn-glow-small" onclick="navigateTo('quote')">Choose Elite</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== PORTFOLIO ==================== -->
+            <section class="page" id="page-portfolio">
+                <div class="page-hero">
+                    <h1>Our <span class="gradient-text">Portfolio</span></h1>
+                    <p>See our completed installations</p>
+                </div>
+                <div class="section">
+                    <div class="portfolio-grid">
+                        <div class="portfolio-card">
+                            <div class="portfolio-visual portfolio-1">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-type">Residential</span>
+                                    <h4>Modern Villa Security</h4>
+                                    <p>8 cameras, 3 smart locks, full alarm system</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="portfolio-visual portfolio-2">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-type">Commercial</span>
+                                    <h4>Office Complex</h4>
+                                    <p>32 cameras, access control, intercom system</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="portfolio-visual portfolio-3">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-type">Residential</span>
+                                    <h4>Luxury Apartment</h4>
+                                    <p>Smart home + security integration</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="portfolio-visual portfolio-4">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-type">Industrial</span>
+                                    <h4>Warehouse Security</h4>
+                                    <p>16 cameras, perimeter alarm, GPS tracking</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="portfolio-visual portfolio-5">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-type">Community</span>
+                                    <h4>Gated Community</h4>
+                                    <p>Full access control, 50+ cameras</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <div class="portfolio-visual portfolio-6">
+                                <div class="portfolio-overlay">
+                                    <span class="portfolio-type">Retail</span>
+                                    <h4>Showroom Protection</h4>
+                                    <p>AI cameras, anti-theft system</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== ABOUT ==================== -->
+            <section class="page" id="page-about">
+                <div class="page-hero">
+                    <h1>About <span class="gradient-text">D.k Dovloper</span></h1>
+                    <p>Pioneering the future of home security since 2014</p>
+                </div>
+
+                <div class="section">
+                    <div class="about-story glass-card">
+                        <div class="about-icon-wrap">
+                            <svg viewBox="0 0 80 96" fill="none" width="60">
+                                <path d="M40 4L4 24V48C4 72 20 88 40 96C60 88 76 72 76 48V24L40 4Z" fill="url(#aboutGrad)"/>
+                                <path d="M28 48L36 56L52 36" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="aboutGrad" x1="4" y1="4" x2="76" y2="96">
+                                        <stop offset="0%" stop-color="#667eea"/>
+                                        <stop offset="100%" stop-color="#764ba2"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h2>Our Story</h2>
+                        <p>Founded in 2014, D.k Dovloper started with a simple mission: make cutting-edge security technology accessible to every homeowner. What began as a small team of passionate engineers has grown into one of the most trusted names in home security.</p>
+                        <p>Today, we've secured over 500 homes and businesses, deployed thousands of cameras, and earned the trust of families who rely on us to protect what matters most. Our commitment to innovation, quality, and customer satisfaction drives everything we do.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-tag">Our Values</span>
+                        <h2 class="section-title">What Drives <span class="gradient-text">Us</span></h2>
+                    </div>
+                    <div class="values-list">
+                        <div class="value-item glass-card">
+                            <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                            <div>
+                                <h3>Our Mission</h3>
+                                <p>To provide cutting-edge security solutions that give every family peace of mind and protect what matters most.</p>
+                            </div>
+                        </div>
+                        <div class="value-item glass-card">
+                            <div class="value-icon icon-purple"><i class="fas fa-eye"></i></div>
+                            <div>
+                                <h3>Our Vision</h3>
+                                <p>To be the global leader in smart home security, pioneering new technologies that make the world safer.</p>
+                            </div>
+                        </div>
+                        <div class="value-item glass-card">
+                            <div class="value-icon icon-green"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h3>Our Promise</h3>
+                                <p>Every client receives personalized attention, transparent pricing, and ongoing support beyond installation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-tag">Leadership</span>
+                        <h2 class="section-title">Meet the <span class="gradient-text">Team</span></h2>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-card glass-card">
+                            <div class="team-avatar avatar-1"><i class="fas fa-user-tie"></i></div>
+                            <h4>David K.</h4>
+                            <span>Founder & CEO</span>
+                        </div>
+                        <div class="team-card glass-card">
+                            <div class="team-avatar avatar-2"><i class="fas fa-user-gear"></i></div>
+                            <h4>Sarah Johnson</h4>
+                            <span>CTO</span>
+                        </div>
+                        <div class="team-card glass-card">
+                            <div class="team-avatar avatar-3"><i class="fas fa-user-shield"></i></div>
+                            <h4>Mike Chen</h4>
+                            <span>Head of Operations</span>
+                        </div>
+                        <div class="team-card glass-card">
+                            <div class="team-avatar avatar-4"><i class="fas fa-user-ninja"></i></div>
+                            <h4>Lisa Park</h4>
+                            <span>Lead Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== TESTIMONIALS ==================== -->
+            <section class="page" id="page-testimonials">
+                <div class="page-hero">
+                    <h1>Client <span class="gradient-text">Reviews</span></h1>
+                    <p>Hear from homeowners who trust D.k Dovloper</p>
+                </div>
+                <div class="section">
+                    <div class="testimonials-list">
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Absolutely impressed with the quality of installation. The AI cameras have already caught two suspicious activities. Best investment for our family's safety!"</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4>Robert Williams</h4>
+                                    <span>Villa Owner, Beverly Hills</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Professional from start to finish. The smart lock system is a game-changer. I can let guests in remotely and track all entries. Highly recommend!"</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar avatar-green"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4>Maria Garcia</h4>
+                                    <span>Apartment Owner, Manhattan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"We installed the Elite package for our office. The 24/7 monitoring gives us complete peace of mind. The team was incredibly professional and responsive."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar avatar-purple"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4>James Mitchell</h4>
+                                    <span>CEO, TechCorp Industries</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card glass-card">
+                            <div class="testimonial-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"After a break-in attempt, we called D.k Dovloper. They installed everything within 24 hours. The system worked perfectly and the police were alerted instantly."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar avatar-orange"><i class="fas fa-user"></i></div>
+                                <div>
+                                    <h4>Susan Anderson</h4>
+                                    <span>Homeowner, Austin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== CONTACT ==================== -->
+            <section class="page" id="page-contact">
+                <div class="page-hero">
+                    <h1>Get in <span class="gradient-text">Touch</span></h1>
+                    <p>We're available 24/7 for your security needs</p>
+                </div>
+
+                <div class="section">
+                    <div class="contact-methods">
+                        <a href="tel:+1234567890" class="contact-method glass-card">
+                            <div class="cm-icon"><i class="fas fa-phone"></i></div>
+                            <h4>Call Us</h4>
+                            <p>+1 (234) 567-890</p>
+                            <span class="cm-action">Tap to Call</span>
+                        </a>
+                        <a href="mailto:info@dkdovloper.com" class="contact-method glass-card">
+                            <div class="cm-icon icon-green"><i class="fas fa-envelope"></i></div>
+                            <h4>Email Us</h4>
+                            <p>info@dkdovloper.com</p>
+                            <span class="cm-action">Tap to Email</span>
+                        </a>
+                        <a href="https://wa.me/1234567890" class="contact-method glass-card" target="_blank">
+                            <div class="cm-icon icon-cyan"><i class="fab fa-whatsapp"></i></div>
+                            <h4>WhatsApp</h4>
+                            <p>+1 (234) 567-890</p>
+                            <span class="cm-action">Chat Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-tag">Send Message</span>
+                        <h2 class="section-title">Contact <span class="gradient-text">Form</span></h2>
+                    </div>
+                    <form id="contactForm" class="premium-form glass-card">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" placeholder="john@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Phone</label>
+                            <input type="tel" placeholder="+1 (234) 567-890">
+                        </div>
+                        <div class="form-field">
+                            <label>Subject</label>
+                            <select required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option>CCTV Installation</option>
+                                <option>Smart Lock Inquiry</option>
+                                <option>Alarm System</option>
+                                <option>Smart Home</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Tell us about your security needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-glow btn-full">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <span class="section-tag">Find Us</span>
+                        <h2 class="section-title">Our <span class="gradient-text">Location</span></h2>
+                    </div>
+                    <div class="map-card glass-card" onclick="openMap()">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Security Avenue, Tech City, TC 12345</p>
+                            <button class="btn-outline-small">Open in Maps</button>
+                        </div>
+                    </div>
+                    <div class="social-links-contact">
+                        <a href="#" class="social-contact"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                        <a href="#" class="social-contact"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+                        <a href="#" class="social-contact"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                        <a href="#" class="social-contact"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+                        <a href="#" class="social-contact"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== QUOTE ==================== -->
+            <section class="page" id="page-quote">
+                <div class="page-hero">
+                    <h1>Get a Free <span class="gradient-text">Quote</span></h1>
+                    <p>Tell us your needs and we'll create a custom plan</p>
+                </div>
+                <div class="section">
+                    <form id="quoteForm" class="premium-form glass-card">
+                        <div class="form-section-title">
+                            <i class="fas fa-user"></i>
+                            <span>Personal Information</span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Full Name *</label>
+                                <input type="text" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Phone *</label>
+                                <input type="tel" placeholder="+1 (234) 567-890" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Email *</label>
+                            <input type="email" placeholder="john@email.com" required>
+                        </div>
+
+                        <div class="form-divider"></div>
+
+                        <div class="form-section-title">
+                            <i class="fas fa-home"></i>
+                            <span>Property Details</span>
+                        </div>
+                        <div class="form-field">
+                            <label>Property Address</label>
+                            <input type="text" placeholder="123 Main Street">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Property Type *</label>
+                                <select required>
+                                    <option value="" disabled selected>Select type</option>
+                                    <option>Apartment</option>
+                                    <option>House</option>
+                                    <option>Villa</option>
+                                    <option>Office</option>
+                                    <option>Warehouse</option>
+                                    <option>Commercial</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Budget Range</label>
+                                <select>
+                                    <option value="" disabled selected>Select budget</option>
+                                    <option>Under $500</option>
+                                    <option>$500 - $1,000</option>
+                                    <option>$1,000 - $2,500</option>
+                                    <option>$2,500 - $5,000</option>
+                                    <option>$5,000+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-divider"></div>
+
+                        <div class="form-section-title">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>Services Required *</span>
+                        </div>
+                        <div class="service-checkboxes">
+                            <label class="service-check">
+                                <input type="checkbox" name="service" value="cctv">
+                                <span class="check-box"></span>
+                                <div class="check-content">
+                                    <i class="fas fa-video"></i>
+                                    <span>CCTV Cameras</span>
+                                </div>
+                            </label>
+                            <label class="service-check">
+                                <input type="checkbox" name="service" value="alarm">
+                                <span class="check-box"></span>
+                                <div class="check-content">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Alarm System</span>
+                                </div>
+                            </label>
+                            <label class="service-check">
+                                <input type="checkbox" name="service" value="lock">
+                                <span class="check-box"></span>
+                                <div class="check-content">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Smart Locks</span>
+                                </div>
+                            </label>
+                            <label class="service-check">
+                                <input type="checkbox" name="service" value="fire">
+                                <span class="check-box"></span>
+                                <div class="check-content">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Fire Detection</span>
+                                </div>
+                            </label>
+                            <label class="service-check">
+                                <input type="checkbox" name="service" value="access">
+                                <span class="check-box"></span>
+                                <div class="check-content">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Access Control</span>
+                                </div>
+                            </label>
+                            <label class="service-check">
+                                <input type="checkbox" name="service" value="smart">
+                                <span class="check-box"></span>
+                                <div class="check-content">
+                                    <i class="fas fa-house-signal"></i>
+                                    <span>Smart Home</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form-divider"></div>
+
+                        <div class="form-field">
+                            <label>Additional Notes</label>
+                            <textarea rows="4" placeholder="Any specific requirements or questions?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-glow btn-full">
+                            <span>Submit Quote Request</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Tab Bar -->
+        <nav class="bottom-bar" id="bottomBar">
+            <button class="tab active" data-page="home">
+                <div class="tab-icon"><i class="fas fa-house"></i></div>
+                <span>Home</span>
+            </button>
+            <button class="tab" data-page="services">
+                <div class="tab-icon"><i class="fas fa-shield-halved"></i></div>
+                <span>Services</span>
+            </button>
+            <button class="tab tab-center" data-page="quote">
+                <div class="tab-center-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+            </button>
+            <button class="tab" data-page="products">
+                <div class="tab-icon"><i class="fas fa-microchip"></i></div>
+                <span>Products</span>
+            </button>
+            <button class="tab" data-page="contact">
+                <div class="tab-icon"><i class="fas fa-headset"></i></div>
+                <span>Contact</span>
+            </button>
+        </nav>
+
+        <!-- Toast -->
+        <div id="toast" class="toast">
+            <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="toast-message" id="toastMessage">Success!</div>
+        </div>
+    </div>
+
+    <script src="premium.js"></script>
+</body>
+</html>
